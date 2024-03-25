@@ -14,9 +14,9 @@ import {
 } from '../../../connection/config/db_sqlite';
 import { createTable, insertData, retrieveData } from '../../../connection/config/database';
 
-createTable();
-insertData();
-retrieveData();
+// createTable();
+// insertData();
+// retrieveData();
 
 // initDatabase();
 // insertHHSListAPI();
