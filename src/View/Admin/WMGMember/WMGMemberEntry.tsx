@@ -122,30 +122,31 @@ const HouseholdSurveyEntry = () => {
   const handleSubmit = () => {
     if (
       formData.name &&
-      formData.fathers_name &&
-      formData.mothers_name &&
-      formData.profession &&
-      formData.land_area &&
-      formData.division_id &&
-      formData.district_id &&
-      formData.upazila_id &&
-      formData.union_id &&
-      formData.post_office &&
-      formData.village &&
-      formData.gender &&
-      formData.birth_date &&
-      formData.religion &&
-      formData.enroll_date &&
-      formData.resign_date &&
-      formData.nid &&
-      formData.nominee_name &&
-      formData.relation_with_nominee &&
-      formData.nationality &&
-      formData.cell_phone &&
-      formData.address &&
-      formData.share_bdt &&
-      formData.enroll_fee &&
-      selectedImage
+       formData.fathers_name
+      // &&
+      // formData.mothers_name &&
+      // formData.profession &&
+      // formData.land_area &&
+      // formData.division_id &&
+      // formData.district_id &&
+      // formData.upazila_id &&
+      // formData.union_id &&
+      // formData.post_office &&
+      // formData.village &&
+      // formData.gender &&
+      // formData.birth_date &&
+      // formData.religion &&
+      // formData.enroll_date &&
+      // formData.resign_date &&
+      // formData.nid &&
+      // formData.nominee_name &&
+      // formData.relation_with_nominee &&
+      // formData.nationality &&
+      // formData.cell_phone &&
+      // formData.address &&
+      // formData.share_bdt &&
+      // formData.enroll_fee &&
+      // selectedImage
     ) {
       console.log('Form submitted successfully:', formData);
       navigation.navigate('WMGMemberList' as never);

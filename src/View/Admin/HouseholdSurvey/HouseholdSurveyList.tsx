@@ -4,38 +4,52 @@ import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
-// import {
-//   fetchHHSListAPI,
-//   initDatabase,
-//   insertHHSListAPI,
-// } from '../../../connection/config/db_sqlite';
+// import { fetchHHSListAPI } from '../../../connection/config/db_sqlite';
+
+
+import {
+  fetchHHSListAPI,
+  initDatabase,
+  insertHHSListAPI,
+} from '../../../connection/config/db_sqlite';
+import { createTable, insertData, retrieveData } from '../../../connection/config/database';
+
+createTable();
+insertData();
+retrieveData();
 
 // initDatabase();
 // insertHHSListAPI();
+// fetchHHSListAPI();
 
 const HouseholdSurveyList = () => {
   const navigation = useNavigation();
   const [households, setHouseholds] = useState<any[]>([]);
 
-  // useEffect(() => {
-  //   fetchHHSListAPI((data: any[]) => {
-  //     setHouseholds(data);
-  //   });
-  // }, []);
-
   useEffect(() => {
-    fetch(`${api_url}/wmg-hhs?api_token=${api_token}`)
-      .then(response => response.json())
-      .then(data => {
-        setHouseholds(data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+    retrieveData((data: any[]) => {
+      setHouseholds(data);
+    });
   }, []);
+
+  // useEffect(() => {
+  //   fetch(`${api_url}/wmg-hhs?api_token=${api_token}`)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setHouseholds(data);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error:', error);
+  //     });
+  // }, []);
 
   return (
     <View style={styles.container}>
+
+
+
+
+
       <ScrollView style={styles.table}>
         {/* Table Header */}
         <View style={styles.tableHeader}>
